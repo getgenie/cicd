@@ -4,6 +4,10 @@ const port = 3000
 
 const build = '1'
 
+app.get('/pool', (req, res) => { // for health check
+    res.send(`OK`)
+})
+
 app.get('/', (req, res) => {
     res.send(`Hello World! build: ${build}`)
 })

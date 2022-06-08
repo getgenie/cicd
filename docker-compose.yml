@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  nodeserver:
+    container_name: getgenieai-nlp
+    hostname: nlp.getgenie.ai
+    build: 
+      context: ./
+      target: production
+    restart: unless-stopped
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "80:3000"
